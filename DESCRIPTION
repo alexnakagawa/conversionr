@@ -8,3 +8,7 @@ Description: This R package converts common metric units of measurement between 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+<<<<<<< HEAD
+=======
+RoxygenNote: 6.0.1.9000
+>>>>>>> 14d458b97cbb277ff5e67a94a2191d2f42b0ebb6
