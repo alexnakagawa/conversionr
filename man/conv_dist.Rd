@@ -20,6 +20,6 @@ A decimal (or vector) displaying the number of 'to' units
 Convert metric units of distance between each other. The basic unit of distance is centimeters, expressed as 'cm'. Examples listed below.
 }
 \examples{
-conv_dist(15, 'ft', 'km')
-conv_dist(60, to = 'dm' )
+conv_dist(15, 'ft', 'm')
+conv_dist(60, 'yd', 'm' )
 }

@@ -1,12 +1,12 @@
-#' Convert between between celsius, kelvin and fahrenheit. 
+#' Convert between between celsius, kelvin and fahrenheit.
 #'
 #' @param num the amount of the unit you want to onvert.
 #' @param from the original unit.
 #' @param to the unit you want to convert to
 #' @return data frame of converted value and unit.
 #' @details num: a positive number
-#' @details from: the original unit. To enter celsius type "c" or "celsius". To enter kelvin type "k" or "kelvin". To enter fahrenheit type "f" or "fahrenheit". 
-#' @details to: the unit you want to convert to. To enter celsius type "c" or "celsius". To enter kelvin type "k" or "kelvin". To enter fahrenheit type "f" or "fahrenheit". 
+#' @details from: the original unit. To enter celsius type "c" or "celsius". To enter kelvin type "k" or "kelvin". To enter fahrenheit type "f" or "fahrenheit".
+#' @details to: the unit you want to convert to. To enter celsius type "c" or "celsius". To enter kelvin type "k" or "kelvin". To enter fahrenheit type "f" or "fahrenheit".
 #' @examples
 #' conv_temp(30, "c", "kelvin")
 #' conv_tem(100, "f", "celsius")
@@ -41,6 +41,8 @@ conv_temp = function( num, from = "", to = "") {
         stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
 
     }
-    else
+    else {
       stop("Invalid 'from' variable format. Check documentation")
+    }
   }
+}

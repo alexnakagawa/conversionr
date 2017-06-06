@@ -25,4 +25,6 @@ vol_gal = c(3.23, 7.20, 3.01, 3.12, 8.00)
 times = c(4.50, 6.12, 2.02, 4.1, 3.98)
 
 marathon_training = data.frame(names, dist_mi, temp_f, vol_gal, times)
-
+marathon_training
+kms = conv_metric((as.vector(conv_dist(dist_mi, 'mi', 'm'))), 'base', 'kilo')
+marathon_training = cbind(marathon_training, kms)
