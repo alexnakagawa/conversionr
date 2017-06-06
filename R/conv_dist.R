@@ -5,8 +5,8 @@
 #' @param to The desired units after conversion, taken as a character. Includes: ft, m, mi, yard, in
 #' @return A decimal (or vector) displaying the number of 'to' units
 #' @examples
-#' conv_dist(15, 'ft', 'km')
-#' conv_dist(60, to = 'dm' )
+#' conv_dist(15, 'ft', 'm')
+#' conv_dist(60, 'yd', 'm' )
 #' @export
 conv_dist <- function(num, from, to) {
   if (from == 'ft' | from == 'feet' | from == 'foot') {
@@ -14,14 +14,14 @@ conv_dist <- function(num, from, to) {
       num * 0.3048
     } else if (to == 'in' | to == 'inches' | to == 'inch') {
       num * 12
-    } else if (to == 'yd' | to == 'yard' to == 'yards') {
+    } else if (to == 'yd' | to == 'yard' | to == 'yards') {
       num / 3
     } else if (to == 'mi' | to == 'mile' | to == 'miles') {
       num * 0.000189394
     } else {
       stop('Invalid desired unit conversion.', call. = FALSE)
     }
-  } else if (from == 'yd' | from == 'yard' from == 'yards') {
+  } else if (from == 'yd' | from == 'yard' | from == 'yards') {
     if (to == 'm' | to == 'meter' | to == 'meters') {
       num * 0.9144
     } else if (to == 'in' | to == 'inches' | to == 'inch') {
@@ -38,7 +38,7 @@ conv_dist <- function(num, from, to) {
       num * 0.3048
     } else if (to == 'ft' | to == 'feet' | to == 'foot') {
       num / 12
-    } else if (to == 'yd' | to == 'yard' to == 'yards') {
+    } else if (to == 'yd' | to == 'yard' | to == 'yards') {
       num / 36
     } else if (to == 'mi' | to == 'mile' | to == 'miles') {
       num * 1.57828e-5
@@ -50,7 +50,7 @@ conv_dist <- function(num, from, to) {
       num * 1609.34
     } else if (to == 'in' | to == 'inches' | to == 'inch') {
       num * 63360
-    } else if (to == 'yd' | to == 'yard' to == 'yards') {
+    } else if (to == 'yd' | to == 'yard' | to == 'yards') {
       num * 1760
     } else if (to == 'ft' | to == 'feet' | to == 'foot') {
       num * 5280
@@ -62,7 +62,7 @@ conv_dist <- function(num, from, to) {
       num * 3.28084
     } else if (to == 'in' | to == 'inches' | to == 'inch') {
       num * 39.3701
-    } else if (to == 'yd' | to == 'yard' to == 'yards') {
+    } else if (to == 'yd' | to == 'yard' | 'yards') {
       num * 1.09361
     } else if (to == 'mi' | to == 'mile' | to == 'miles') {
       num * 0.000621371
