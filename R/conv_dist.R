@@ -9,62 +9,62 @@
 #' conv_dist(60, to = 'dm' )
 #' @export
 conv_dist <- function(num, from, to) {
-  if (from == 'ft') {
-    if (to == 'm') {
+  if (from == 'ft' | from == 'feet' | from == 'foot') {
+    if (to == 'm' | to == 'meter' | to == 'meters') {
       num * 0.3048
-    } else if (to == 'in') {
+    } else if (to == 'in' | to == 'inches' | to == 'inch') {
       num * 12
-    } else if (to == 'yd') {
+    } else if (to == 'yd' | to == 'yard' to == 'yards') {
       num / 3
-    } else if (to == 'mi') {
+    } else if (to == 'mi' | to == 'mile' | to == 'miles') {
       num * 0.000189394
     } else {
       stop('Invalid desired unit conversion.', call. = FALSE)
     }
-  } else if (from == 'yd') {
-    if (to == 'm') {
+  } else if (from == 'yd' | from == 'yard' from == 'yards') {
+    if (to == 'm' | to == 'meter' | to == 'meters') {
       num * 0.9144
-    } else if (to == 'in') {
+    } else if (to == 'in' | to == 'inches' | to == 'inch') {
       num * 36
-    } else if (to == 'ft') {
+    } else if (to == 'ft' | to == 'feet' | to == 'foot') {
       num * 3
-    } else if (to == 'mi') {
+    } else if (to == 'mi' | to == 'mile' | to == 'miles') {
       num / 1760
     } else {
       stop('Invalid desired unit conversion.', call. = FALSE)
     }
-  } else if (from == 'in') {
-    if (to == 'm') {
+  } else if (from == 'in' | from == 'inches' | from == 'inch') {
+    if (to == 'm' | to == 'meter' | to == 'meters') {
       num * 0.3048
-    } else if (to == 'ft') {
+    } else if (to == 'ft' | to == 'feet' | to == 'foot') {
       num / 12
-    } else if (to == 'yard') {
+    } else if (to == 'yd' | to == 'yard' to == 'yards') {
       num / 36
-    } else if (to == 'mi') {
+    } else if (to == 'mi' | to == 'mile' | to == 'miles') {
       num * 1.57828e-5
     } else {
       stop('Invalid desired unit conversion.', call. = FALSE)
     }
-  } else if (from == 'mi') {
-    if (to == 'm') {
+  } else if (from == 'mi' | from == 'miles' | from == 'mile') {
+    if (to == 'm' | to == 'meter' | to == 'meters') {
       num * 1609.34
-    } else if (to == 'in') {
+    } else if (to == 'in' | to == 'inches' | to == 'inch') {
       num * 63360
-    } else if (to == 'yard') {
+    } else if (to == 'yd' | to == 'yard' to == 'yards') {
       num * 1760
-    } else if (to == 'ft') {
+    } else if (to == 'ft' | to == 'feet' | to == 'foot') {
       num * 5280
     } else {
       stop('Invalid desired unit conversion.', call. = FALSE)
     }
-  } else if (from == "m") {
-    if (to == 'ft') {
+  } else if (from == "m" | from == 'meters' | from == 'meter') {
+    if (to == 'ft' | to == 'feet' | to == 'foot') {
       num * 3.28084
-    } else if (to == 'in') {
+    } else if (to == 'in' | to == 'inches' | to == 'inch') {
       num * 39.3701
-    } else if (to == 'yard') {
+    } else if (to == 'yd' | to == 'yard' to == 'yards') {
       num * 1.09361
-    } else if (to == 'mi') {
+    } else if (to == 'mi' | to == 'mile' | to == 'miles') {
       num * 0.000621371
     } else {
       stop('Invalid desired unit conversion.', call. = FALSE)
