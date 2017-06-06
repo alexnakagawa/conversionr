@@ -24,20 +24,5 @@ temp_f = c(60, 82, 41, 50, 93)
 vol_gal = c(3.23, 7.20, 3.01, 3.12, 8.00)
 times = c(4.50, 6.12, 2.02, 4.1, 3.98)
 
-
 marathon_training = data.frame(names, dist_mi, temp_f, vol_gal, times)
-marathon_training
-
-km_and_
-
-
-
-marathon_training
-
-
-
-
-
-
-
 
