@@ -13,15 +13,15 @@
 #' @export
 
 conv_temp = function( num, from = "", to = "") {
-  if(num < 0 | from == "" | to == "" )
+  if(num < 0 | from == "" | to == "" ) {
     stop("Invalid Input! Check documentation", call. = FALSE)
-  else {
+  } else {
     if(from == "c" | from == "celsius") {
       if(to == "k" | to == "kelvin")
         return(data.frame( num = num+273.15, unit = to))
       else if (to == "f" | to == "fahrenheit")
         return(data.frame( num = ((num*1.8)+32), unit = to))
-        else
+      else
         stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
     }
     else if(from == "k" | from == "kelvin") {
@@ -39,7 +39,6 @@ conv_temp = function( num, from = "", to = "") {
         return(data.frame(num = ((num-32)*0.5555+273.15), unit = to))
       else
         stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-
     }
     else {
       stop("Invalid 'from' variable format. Check documentation")
