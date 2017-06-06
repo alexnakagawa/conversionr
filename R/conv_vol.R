@@ -1,4 +1,4 @@
-#' Convert between liters, gallons, quarts, and pints. 
+#' Convert between liters, gallons, quarts, and pints.
 #'
 #' @param num the amount of the unit you want to onvert.
 #' @param from the original unit.
@@ -8,11 +8,11 @@
 #' @details from: the original unit. To enter liters type "l" or "liter". To enter gallons type "gal" or "gallon". To enter quarts type "qt" or "quart". To enter pints type "pt" or "pint"
 #' @details to: the unit you want to convert to. To enter liters type "l" or "liter". To enter gallons type "gal" or "gallon". To enter quarts type "qt" or "quart". To enter pints type "pt" or "pint"
 #' @examples
-#' conv_volume(4, "l", "gal")
-#' conv_volume(25, "pint", "qt")
+#' conv_vol(4, "l", "gal")
+#' conv_vol(25, "pint", "qt")
 #' @export
 
-conv_volume = function( num, from = "", to = "") {
+conv_vol = function(num, from = "", to = "") {
   if(num < 0 | from == "" | to == "" )
     stop("Invalid Input! Check documentation", call. = FALSE)
   else {
