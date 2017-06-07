@@ -15,41 +15,41 @@
 conv_mass = function( num, from = "", to = "") {
   if(from == "kg" | from == "kilogram") {
     if(to == "lb" | to == "pound")
-      return(data.frame( num = num*2.20462, unit = to))
+      return(data.frame( num = as.numeric(num)*2.20462, unit = to))
     else if (to == "oz" | to == "ounce")
-      return(data.frame( num = num*35.274, unit = to))
+      return(data.frame( num = as.numeric(num)*35.274, unit = to))
     else if(to == "st" | to == "stone")
-      return(data.frame(num = num*.157473, unit = to))
+      return(data.frame(num = as.numeric(num)*.157473, unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
   else if(from == "lb" | from == "pound") {
     if(to == "kg" | to == "kilogram")
-      return(data.frame(num = num*0.453592, unit = to))
+      return(data.frame(num = as.numeric(num)*0.453592, unit = to))
     else if (to == "oz" | to == "ounce")
-      return(data.frame(num = num*16, unit = to))
+      return(data.frame(num = as.numeric(num)*16, unit = to))
     else if(to == "st" | to == "stone")
-      return(data.frame(num = num*0.0714286, unit = to))
+      return(data.frame(num = as.numeric(num)*0.0714286, unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
   else if(from == "oz" | from == "ounce") {
     if(to == "kg" | to == "kilogram")
-      return(data.frame(num = num*0.0283495, unit = to))
+      return(data.frame(num = as.numeric(num)*0.0283495, unit = to))
     else if (to == "lb" | to == "pound")
-      return(data.frame(num = num*0.0625, unit = to))
+      return(data.frame(num = as.numeric(num)*0.0625, unit = to))
     else if(to == "st" | to == "stone")
-      return(data.frame(num = num*0.00446429, unit = to))
+      return(data.frame(num = as.numeric(num)*0.00446429, unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
   else if(from == "st" | from == "stone") {
     if(to == "kg" | to == "kilogram")
-      return(data.frame(num = num*6.35029, unit = to))
+      return(data.frame(num = as.numeric(num)*6.35029, unit = to))
     else if (to == "lb" | to == "pound")
-      return(data.frame(num = num*14, unit = to))
+      return(data.frame(num = as.numeric(num)*14, unit = to))
     else if(to == "oz" | to == "ounce")
-      return(data.frame(num = num*224, unit = to))
+      return(data.frame(num = as.numeric(num)*224, unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
