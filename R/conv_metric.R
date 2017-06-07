@@ -15,46 +15,44 @@
 conv_metric = function( num, from = "", to = "") {
   if(from == "milli") {
     if(to == "centi")
-      return(data.frame( num = as.numeric(num)*.1, unit = to))
+      return(data.frame( num = as.numeric(num*.1), unit = to))
     else if (to == "base")
-      return(data.frame( num = as.numeric(num)*0.001, unit = to))
+      return(data.frame( num = as.numeric(num*0.001), unit = to))
     else if(to == "kilo")
-      return(data.frame(num = as.numeric(num)*0.000001, unit = to))
+      return(data.frame(num = as.numeric(num*0.000001), unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
   else if(from == "centi") {
     if(to == "milli" | to == "milli")
-      return(data.frame(num = as.numeric(num)*10, unit = to))
+      return(data.frame(num = as.numeric(num*10), unit = to))
     else if (to == "base")
-      return(data.frame(num = as.numeric(num)*0.01, unit = to))
+      return(data.frame(num = as.numeric(num*0.01), unit = to))
     else if(to == "kilo")
-      return(data.frame(num = as.numeric(num)*0.00001, unit = to))
+      return(data.frame(num = as.numeric(num*0.00001), unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
   else if(from == "base") {
     if(to == "milli")
-      return(data.frame(num = as.numeric(num)*1000, unit = to))
+      return(data.frame(num = as.numeric(num*1000), unit = to))
     else if (to == "centi")
-      return(data.frame(num = as.numeric(num)*100, unit = to))
+      return(data.frame(num = as.numeric(num*100), unit = to))
     else if(to == "kilo")
-      return(data.frame(num = as.numeric(num)*0.001, unit = to))
+      return(data.frame(num = as.numeric(num*0.001), unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
   else if(from == "kilo") {
     if(to == "milli")
-      return(data.frame(num = as.numeric(num)*1000000, unit = to))
+      return(data.frame(num = as.numeric(num*1000000), unit = to))
     else if (to == "centi")
-      return(data.frame(num = as.numeric(num)*100000, unit = to))
+      return(data.frame(num = as.numeric(num*100000), unit = to))
     else if(to == "base")
-      return(data.frame(num = as.numeric(num)*1000, unit = to))
+      return(data.frame(num = as.numeric(num*1000), unit = to))
     else
       stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
   else
     stop("Invalid 'from' variable format. Check documentation")
 }
-
-
