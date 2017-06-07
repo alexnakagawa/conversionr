@@ -13,50 +13,47 @@
 #' @export
 
 conv_vol = function(num, from = "", to = "") {
-  if(num < 0 | from == "" | to == "" )
-    stop("Invalid Input! Check documentation", call. = FALSE)
-  else {
-    if(from == "l" | from == "liter") {
-      if(to == "gal" | to == "gallon")
-        return(data.frame( num = num*0.2641720524, unit = to))
-      else if (to == "qt" | to == "quart")
-        return(data.frame( num = num*1.0566882094, unit = to))
-      else if(to == "pt" | to == "pint")
-        return(data.frame(num = num*2.1133764189, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
-    else if(from == "gal" | from == "gallon") {
-      if(to == "l" | to == "liter")
-        return(data.frame(num = num*3.785411784, unit = to))
-      else if (to == "qt" | to == "quart")
-        return(data.frame(num = num*4, unit = to))
-      else if(to == "pt" | to == "pint")
-        return(data.frame(num = num*8, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
-    else if(from == "qt" | from == "quart") {
-      if(to == "l" | to == "liter")
-        return(data.frame(num = num*0.946352946, unit = to))
-      else if (to == "gal" | to == "gallon")
-        return(data.frame(num = num*0.25, unit = to))
-      else if(to == "pt" | to == "pint")
-        return(data.frame(num = num*2, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
-    else if(from == "pt" | from == "pint") {
-      if(to == "l" | to == "liter")
-        return(data.frame(num = num*0.473176473, unit = to))
-      else if (to == "gal" | to == "gallon")
-        return(data.frame(num = num*0.125, unit = to))
-      else if(to == "qt" | to == "quart")
-        return(data.frame(num = num*0.5, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
+  if(from == "l" | from == "liter") {
+    if(to == "gal" | to == "gallon")
+      return(data.frame( num = num*0.2641720524, unit = to))
+    else if (to == "qt" | to == "quart")
+      return(data.frame( num = num*1.0566882094, unit = to))
+    else if(to == "pt" | to == "pint")
+      return(data.frame(num = num*2.1133764189, unit = to))
     else
-      stop("Invalid 'from' variable format. Check documentation")
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
+  else if(from == "gal" | from == "gallon") {
+    if(to == "l" | to == "liter")
+      return(data.frame(num = num*3.785411784, unit = to))
+    else if (to == "qt" | to == "quart")
+      return(data.frame(num = num*4, unit = to))
+    else if(to == "pt" | to == "pint")
+      return(data.frame(num = num*8, unit = to))
+    else
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
+  }
+  else if(from == "qt" | from == "quart") {
+    if(to == "l" | to == "liter")
+      return(data.frame(num = num*0.946352946, unit = to))
+    else if (to == "gal" | to == "gallon")
+      return(data.frame(num = num*0.25, unit = to))
+    else if(to == "pt" | to == "pint")
+      return(data.frame(num = num*2, unit = to))
+    else
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
+  }
+  else if(from == "pt" | from == "pint") {
+    if(to == "l" | to == "liter")
+      return(data.frame(num = num*0.473176473, unit = to))
+    else if (to == "gal" | to == "gallon")
+      return(data.frame(num = num*0.125, unit = to))
+    else if(to == "qt" | to == "quart")
+      return(data.frame(num = num*0.5, unit = to))
+    else
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
+  }
+  else
+    stop("Invalid 'from' variable format. Check documentation")
 }
+

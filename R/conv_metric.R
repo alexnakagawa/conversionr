@@ -13,51 +13,47 @@
 #' @export
 
 conv_metric = function( num, from = "", to = "") {
-  if(num < 0 | from == "" | to == "" )
-    stop("Invalid Input! Check documentation", call. = FALSE)
-  else {
-    if(from == "milli") {
-      if(to == "centi")
-        return(data.frame( num = num/10, unit = to))
-      else if (to == "base")
-        return(data.frame( num = num/1000, unit = to))
-      else if(to == "kilo")
-        return(data.frame(num = num/1000000, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
-    else if(from == "centi") {
-      if(to == "milli" | to == "milli")
-        return(data.frame(num = num*10, unit = to))
-      else if (to == "base")
-        return(data.frame(num = num/100, unit = to))
-      else if(to == "kilo")
-        return(data.frame(num = num/100000, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
-    else if(from == "base") {
-      if(to == "milli")
-        return(data.frame(num = num*1000, unit = to))
-      else if (to == "centi")
-        return(data.frame(num = num*100, unit = to))
-      else if(to == "kilo")
-        return(data.frame(num = num/1000, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
-    else if(from == "kilo") {
-      if(to == "milli")
-        return(data.frame(num = num*1000000, unit = to))
-      else if (to == "centi")
-        return(data.frame(num = num*100000, unit = to))
-      else if(to == "base")
-        return(data.frame(num = num*1000, unit = to))
-      else
-        stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
-    }
+  if(from == "milli") {
+    if(to == "centi")
+      return(data.frame( num = as.numeric(unlist(num))*.1, unit = to))
+    else if (to == "base")
+      return(data.frame( num = as.numeric(unlist(num))*0.001, unit = to))
+    else if(to == "kilo")
+      return(data.frame(num = as.numeric(unlist(num))*0.000001, unit = to))
     else
-      stop("Invalid 'from' variable format. Check documentation")
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
   }
+  else if(from == "centi") {
+    if(to == "milli" | to == "milli")
+      return(data.frame(num = as.numeric(unlist(num))*10, unit = to))
+    else if (to == "base")
+      return(data.frame(num = as.numeric(unlist(num))*0.01, unit = to))
+    else if(to == "kilo")
+      return(data.frame(num = as.numeric(unlist(num))*0.00001, unit = to))
+    else
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
+  }
+  else if(from == "base") {
+    if(to == "milli")
+      return(data.frame(num = as.numeric(unlist(num))*1000, unit = to))
+    else if (to == "centi")
+      return(data.frame(num = as.numeric(unlist(num))*100, unit = to))
+    else if(to == "kilo")
+      return(data.frame(num = as.numeric(unlist(num))*0.001, unit = to))
+    else
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
+  }
+  else if(from == "kilo") {
+    if(to == "milli")
+      return(data.frame(num = as.numeric(unlist(num))*1000000, unit = to))
+    else if (to == "centi")
+      return(data.frame(num = as.numeric(unlist(num))*100000, unit = to))
+    else if(to == "base")
+      return(data.frame(num = as.numeric(unlist(num))*1000, unit = to))
+    else
+      stop("Invalid 'to' variable format. Check documenation", call. = FALSE)
+  }
+  else
+    stop("Invalid 'from' variable format. Check documentation")
 }
 
