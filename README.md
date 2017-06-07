@@ -1,7 +1,6 @@
 # conversionr
 
-This is an R package to convert between volume, mass, temperature, and distance units. This package also handles conversions within the metric system and imperial system.
-
+This is an R package to convert between volume, mass, temperature, and distance units. The package covers converting between basic units of the forementioned categories, and also covers conversions between imperial and standard units.
 ## Installation
 
 Open up an R console. Run the following line:
